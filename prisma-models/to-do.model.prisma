@@ -1,0 +1,7 @@
+model ToDo {
+  id          String   @id @default(uuid())
+  description String
+  completed   Boolean  @default(false)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
