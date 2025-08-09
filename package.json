@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prisma:cat": "cat prisma-models/01-base.schema.prisma prisma-models/models/*.model.prisma > prisma/schema.prisma",
+    "prisma:cat": "cat prisma-models/01-base.schema.prisma prisma-models/*.model.prisma > prisma/schema.prisma",
     "prisma:migrate": "pnpm dlx prisma migrate dev",
     "prisma:generate": "pnpm dlx prisma generate"
   },

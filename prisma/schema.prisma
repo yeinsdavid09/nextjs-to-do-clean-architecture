@@ -15,10 +15,25 @@ datasource db {
 }
 
 // --------------------------------- Models ---------------------------------
+enum Status {
+  BACKLOG
+  IN_PROGRESS
+  DONE
+  CANCELED
+}
+
+enum Priority {
+  LOW
+  MEDIUM
+  HIGH
+}
+
 model ToDo {
   id          String   @id @default(uuid())
-  description String
-  completed   Boolean  @default(false)
+  title       String   @db.VarChar()
+  description String?  @db.VarChar()
+  status      Status   @default(BACKLOG)
+  priority    Priority @default(LOW)
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 }
