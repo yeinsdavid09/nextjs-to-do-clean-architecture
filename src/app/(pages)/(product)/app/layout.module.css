@@ -1,0 +1,46 @@
+.mainContainer {
+  @apply flex
+	justify-center
+	items-center
+	gap-4
+	w-screen
+	h-screen
+	p-4;
+
+  .__sidebar {
+    @apply w-64
+		h-full
+		border-2
+		border-gray-700
+		rounded-xl
+		overflow-hidden;
+  }
+
+  .__wrapper {
+    @apply w-full
+		h-full
+		overflow-hidden;
+
+    .__header {
+      @apply w-full
+			h-16
+			px-4
+			py-2
+			mb-4
+			border-2
+			border-gray-700
+			rounded-xl
+			overflow-hidden;
+    }
+
+    .__main {
+      @apply w-full
+			p-4
+			border-2
+			border-gray-700
+			rounded-xl
+			overflow-hidden;
+      height: calc(100vh - 7rem);
+    }
+  }
+}
