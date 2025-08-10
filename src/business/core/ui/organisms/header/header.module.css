@@ -1,0 +1,15 @@
+.mainContainer {
+  @apply flex
+	items-center
+	w-full
+	h-full;
+
+  .__search {
+    @apply w-1/2
+		h-8
+		mx-auto
+		border-2
+		border-gray-700
+		rounded-lg;
+  }
+}
