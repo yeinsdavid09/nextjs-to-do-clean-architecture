@@ -1,0 +1,9 @@
+.mainContainer {
+  @apply w-full
+	h-full
+	p-4;
+
+  .__clickeable {
+    @apply cursor-pointer;
+  }
+}
