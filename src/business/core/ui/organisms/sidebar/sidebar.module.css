@@ -1,0 +1,63 @@
+.mainContainer {
+  @apply w-full
+	h-full
+	p-4;
+
+  .__logo {
+    @apply block
+		w-[90%]
+		h-10
+		py-2
+		mx-auto
+		mb-12
+		rounded-xl
+		border-2
+		border-gray-700
+		text-center
+		text-gray-700
+		text-sm;
+  }
+
+  .__profile {
+    @apply block
+		w-3/4
+		mx-auto
+		mb-12
+		text-center;
+
+    .__avatar {
+      @apply w-20
+			h-20
+			py-2
+			mx-auto
+			mb-2
+			rounded-full
+			border-2
+			border-gray-700
+			text-center
+		text-gray-700
+			text-sm;
+    }
+    .__name {
+      @apply block
+			w-full
+			text-sm
+			font-bold
+			text-ellipsis
+			overflow-hidden;
+    }
+    .__email {
+      @apply block
+			text-xs
+			text-ellipsis
+			overflow-hidden;
+    }
+  }
+
+  .__navigation {
+    @apply flex
+		flex-col
+		items-center
+		gap-2;
+  }
+}
