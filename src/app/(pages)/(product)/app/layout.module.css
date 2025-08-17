@@ -1,46 +1,127 @@
 .mainContainer {
-  @apply flex
-	justify-center
-	items-center
-	gap-4
-	w-screen
-	h-screen
-	p-4;
+  .__layout {
+    @apply flex
+		justify-center
+		items-center
+		gap-4
+		w-screen
+		h-screen
+		p-4;
 
-  .__sidebar {
-    @apply w-64
-		h-full
-		border-2
-		border-gray-700
-		rounded-xl
-		overflow-hidden;
+    .__sidebar {
+      @apply w-64
+			h-full
+			border-2
+			border-gray-700
+			rounded-xl
+			overflow-hidden;
+    }
+
+    .__wrapper {
+      @apply w-full
+			h-full
+			overflow-hidden;
+
+      .__header {
+        @apply w-full
+				h-16
+				px-4
+				py-2
+				mb-4
+				border-2
+				border-gray-700
+				rounded-xl
+				overflow-hidden;
+      }
+
+      .__main {
+        @apply w-full
+				p-4
+				border-2
+				border-gray-700
+				rounded-xl
+				overflow-hidden;
+        height: calc(100vh - 7rem);
+      }
+    }
+  }
+}
+
+.__lateralSlide {
+  &.__deployed {
+    .__container {
+      @apply -translate-x-full;
+    }
+    .__backgroundLayer {
+      @apply block;
+    }
   }
 
-  .__wrapper {
-    @apply w-full
-		h-full
-		overflow-hidden;
-
-    .__header {
-      @apply w-full
-			h-16
-			px-4
-			py-2
-			mb-4
-			border-2
-			border-gray-700
+  .__container {
+    @apply fixed
+			z-[10]
+			top-0
+			left-full
+			w-auto
+			h-screen
 			rounded-xl
-			overflow-hidden;
-    }
+			bg-black
+			overflow-hidden
+			transition-transform
+			lg:border-l-2
+			lg:border-gray-700;
+  }
+  .__backgroundLayer {
+    @apply hidden
+		fixed
+		z-[9]
+		top-0
+		left-0
+		w-screen
+		h-screen
+		bg-gray-700/50
+		blur-md;
+  }
+}
 
-    .__main {
-      @apply w-full
-			p-4
-			border-2
-			border-gray-700
-			rounded-xl
-			overflow-hidden;
-      height: calc(100vh - 7rem);
+.__modal {
+  &.__deployed {
+    .__container {
+      @apply opacity-100
+			visible;
     }
+    .__backgroundLayer {
+      @apply block;
+    }
+  }
+
+  .__container {
+    @apply fixed
+			z-[12]
+			top-1/2
+			left-1/2
+			-translate-x-1/2
+			-translate-y-1/2
+			w-auto
+			h-auto
+			rounded-xl
+			bg-black
+			opacity-0
+			invisible
+			overflow-hidden
+			transition-opacity
+			border-2
+			border-gray-700;
+  }
+  .__backgroundLayer {
+    @apply hidden
+		fixed
+		z-[11]
+		top-0
+		left-0
+		w-screen
+		h-screen
+		bg-gray-700/50
+		blur-md;
   }
 }
