@@ -1,7 +1,10 @@
 .mainContainer {
   @apply w-full
 	h-full
-	p-4;
+	p-4
+	border-2
+	border-gray-700
+	rounded-xl;
 
   .__clickeable {
     @apply cursor-pointer;
