@@ -1,0 +1,35 @@
+.mainContainer {
+  @apply relative
+	w-[90vw]
+  min-h-[200px]
+	p-4
+	sm:w-[500px];
+
+  .__header {
+    @apply relative
+		h-10
+		space-y-2
+		border-b-2
+		border-gray-700;
+
+    .__title {
+      @apply text-xl
+			text-center
+			font-bold;
+    }
+  }
+  .__footer {
+    @apply absolute
+		z-[2]
+		bottom-0
+		left-1/2
+		-translate-x-1/2
+		flex
+		justify-center
+		items-center
+		w-[90%]
+		h-14
+		border-t-2
+		border-gray-700;
+  }
+}
