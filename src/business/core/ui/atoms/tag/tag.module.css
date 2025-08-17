@@ -1,0 +1,11 @@
+.mainContainer {
+  @apply flex
+	justify-center
+	items-center
+	px-4
+	py-2;
+  .__label {
+    @apply text-xs
+		capitalize;
+  }
+}
