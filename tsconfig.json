@@ -22,9 +22,15 @@
       "@/*": ["./src/*"],
       "@api/*": ["./src/app/api/(modules)/*"],
       "@pages/*": ["./src/app/(pages)*"],
-      "@business/*": ["./src/*"]
+      "@business/*": ["./src/business/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "src/app/api/(core)/auth/[...nextauth]"
+  ],
   "exclude": ["node_modules"]
 }
