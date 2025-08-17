@@ -1,0 +1,12 @@
+.mainContainer {
+  @apply flex
+	justify-center
+	items-center
+	w-full
+	h-full
+	overflow-hidden;
+  .__span {
+    @apply block
+		text-xl;
+  }
+}
