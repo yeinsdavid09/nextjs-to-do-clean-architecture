@@ -31,8 +31,8 @@ export class ToDoPrismaDatasourceImpl implements ToDoDatasource {
     return { data, total };
   }
 
-  async findOne(id: string): Promise<ToDo> {
-    const record = await prisma.toDo.findFirst({ where: { id } });
+  async findOne(field: keyof ToDo, value: string): Promise<ToDo> {
+    const record = await prisma.toDo.findFirst({ where: { [field]: value } });
 
     if (!record) throw new Error("Record not found");
 

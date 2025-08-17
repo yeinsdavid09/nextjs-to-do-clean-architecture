@@ -7,6 +7,7 @@ export const CreateToDoDto = object({
     .oneOf(["IN_PROGRESS", "DONE", "CANCELED", "BACKLOG"])
     .optional(),
   priority: string().oneOf(["LOW", "MEDIUM", "HIGH"]).optional(),
+  userId: string().required().uuid(),
 });
 
 export const UpdateToDoDto = object({

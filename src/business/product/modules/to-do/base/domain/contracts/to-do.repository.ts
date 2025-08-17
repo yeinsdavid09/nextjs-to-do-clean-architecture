@@ -2,6 +2,7 @@
 import {
   CreateToDos,
   FindAllToDos,
+  GetAllToDos,
   RemoveToDos,
   ToDo,
   UpdateToDos,
@@ -10,8 +11,8 @@ import {
 export interface ToDoRepository {
   //#region --------------------------------- Methods ---------------------------------
 
-  findAll(params?: FindAllToDos): Promise<ToDo>;
-  findOne(id: string): Promise<ToDo>;
+  findAll(params?: GetAllToDos): Promise<FindAllToDos>;
+  findOne(field: keyof ToDo, value: string): Promise<ToDo>;
   create(data: CreateToDos): Promise<ToDo>;
   update(id: string, data: UpdateToDos): Promise<ToDo>;
   remove(id: string): Promise<RemoveToDos>;

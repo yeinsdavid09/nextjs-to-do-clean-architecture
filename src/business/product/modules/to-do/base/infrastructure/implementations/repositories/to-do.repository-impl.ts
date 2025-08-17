@@ -9,6 +9,7 @@ import {
   CreateToDos,
   UpdateToDos,
   RemoveToDos,
+  GetAllToDos,
 } from "../../../domain/interfaces/to-do.interfaces";
 
 export class ToDoRepositoryImpl implements ToDoRepository {
@@ -20,12 +21,12 @@ export class ToDoRepositoryImpl implements ToDoRepository {
 
   //#region --------------------------------- Methods ---------------------------------
 
-  findAll(params?: FindAllToDos): Promise<ToDo> {
+  findAll(params?: GetAllToDos): Promise<FindAllToDos> {
     return this._datasource.findAll(params);
   }
 
-  findOne(id: string): Promise<ToDo> {
-    return this._datasource.findOne(id);
+  findOne(field: keyof ToDo, value: string): Promise<ToDo> {
+    return this._datasource.findOne(field, value);
   }
 
   create(data: CreateToDos): Promise<ToDo> {

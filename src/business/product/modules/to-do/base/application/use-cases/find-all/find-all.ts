@@ -4,7 +4,7 @@ import { ToDoRepository } from "../../../domain/contracts/to-do.repository";
 //* Interfaces
 import {
   FindAllToDos,
-  ToDo,
+  GetAllToDos,
 } from "../../../domain/interfaces/to-do.interfaces";
 
 export class FindAllToDosUseCase {
@@ -16,8 +16,8 @@ export class FindAllToDosUseCase {
 
   //#region --------------------------------- Methods ---------------------------------
 
-  execute(params?: FindAllToDos): Promise<ToDo> {
-    const mappedParams: FindAllToDos | undefined = params;
+  execute(params?: GetAllToDos): Promise<FindAllToDos> {
+    const mappedParams: GetAllToDos | undefined = params;
     return this._repository.findAll(mappedParams);
   }
 

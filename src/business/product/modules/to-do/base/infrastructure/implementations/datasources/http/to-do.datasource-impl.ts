@@ -14,7 +14,7 @@ import {
 export class ToDoHttpDatasourceImpl implements ToDoDatasource {
   //#region --------------------------------- Variables ---------------------------------
 
-  private readonly _api: string = "";
+  private readonly _api: string = process.env.API_URL!;
   private readonly _endpoint: string = "to-do";
 
   //#endregion
@@ -31,10 +31,14 @@ export class ToDoHttpDatasourceImpl implements ToDoDatasource {
     return response;
   }
 
-  async findOne(id: string): Promise<ToDo> {
-    const response = await fetch(`${this._api}/${this._endpoint}/${id}`, {
-      method: "GET",
-    })
+  async findOne(field: keyof ToDo, value: string): Promise<ToDo> {
+    const params = new URLSearchParams({ field: String(field), value });
+    const response = await fetch(
+      `${this._api}/${this._endpoint}/find?${params.toString()}`,
+      {
+        method: "GET",
+      }
+    )
       .then((res) => res.json())
       .catch((err) => console.log(err));
 

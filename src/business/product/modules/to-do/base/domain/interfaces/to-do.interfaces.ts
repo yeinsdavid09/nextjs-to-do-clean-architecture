@@ -1,4 +1,6 @@
-import { Pagination } from "@/business/core/features/pagination/pagination.interfaces";
+//* Interfaces
+import { Pagination } from "@business/core/features/pagination/pagination.interfaces";
+import { Users } from "@business/core/modules/users/base/domain/interfaces/users.interfaces";
 
 export interface ToDo {
   id: string;
@@ -6,6 +8,8 @@ export interface ToDo {
   description: string | null;
   status: "IN_PROGRESS" | "DONE" | "CANCELED" | "BACKLOG";
   priority: "LOW" | "MEDIUM" | "HIGH";
+  userId: string;
+  user?: Users;
   createdAt: Date;
   updatedAt: Date;
 }
@@ -22,6 +26,7 @@ export interface CreateToDos {
   description?: string;
   status?: "IN_PROGRESS" | "DONE" | "CANCELED" | "BACKLOG";
   priority?: "LOW" | "MEDIUM" | "HIGH";
+  userId: string;
   createdAt?: Date;
 }
 

@@ -13,8 +13,8 @@ export class FindOneToDoUseCase {
 
   //#region --------------------------------- Methods ---------------------------------
 
-  execute(id: string): Promise<ToDo> {
-    return this._repository.findOne(id);
+  execute(field: keyof ToDo, value: string): Promise<ToDo> {
+    return this._repository.findOne(field, value);
   }
 
   //#endregion

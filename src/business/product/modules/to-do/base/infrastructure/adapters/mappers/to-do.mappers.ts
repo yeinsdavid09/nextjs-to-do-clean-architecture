@@ -8,7 +8,7 @@ import {
 export class ToDoMapper {
   //#region --------------------------------- Models ---------------------------------
 
-  toModel(response: ToDo): ToDo {
+  static toModel(response: ToDo): ToDo {
     return {
       id: response.id,
       title: response.title,
@@ -20,7 +20,7 @@ export class ToDoMapper {
     };
   }
 
-  toCreateModel(response: CreateToDos): CreateToDos {
+  static toCreateModel(response: CreateToDos): CreateToDos {
     return {
       title: response.title,
       description: response.description,
@@ -30,7 +30,7 @@ export class ToDoMapper {
     };
   }
 
-  toUpdateModel(response: UpdateToDos): UpdateToDos {
+  static toUpdateModel(response: UpdateToDos): UpdateToDos {
     return {
       title: response.title,
       description: response.description,
