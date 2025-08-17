@@ -1,0 +1,8 @@
+.toDoGrid {
+  @apply flex
+	flex-col
+	w-full
+	h-full
+	md:grid
+	md:grid-cols-4;
+}
