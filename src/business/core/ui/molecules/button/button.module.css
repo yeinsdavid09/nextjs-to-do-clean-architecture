@@ -1,0 +1,12 @@
+.mainContainer {
+  @apply flex
+	justify-center
+	items-center
+	gap-1
+	w-full
+	h-full
+	px-4
+	py-2
+	rounded-xl
+	transition-all;
+}
