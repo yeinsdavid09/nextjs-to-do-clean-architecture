@@ -17,6 +17,8 @@ model ToDo {
   description String?  @db.VarChar()
   status      Status   @default(BACKLOG)
   priority    Priority @default(LOW)
+  userId      String
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
+  user        User     @relation(fields: [userId], references: [id])
 }

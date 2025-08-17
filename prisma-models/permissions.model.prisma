@@ -1,0 +1,9 @@
+model Permission {
+  id        String   @id @default(uuid())
+  userId    String
+  roleId    String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  users     User?    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  roles     Rol?     @relation(fields: [roleId], references: [id], onDelete: Cascade)
+}
